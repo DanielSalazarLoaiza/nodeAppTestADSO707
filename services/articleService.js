@@ -33,6 +33,10 @@ const createArticle = async (title, content, UserId) => {
             content, 
             UserId
         });
+        if (newArticle) {
+            const categories = [1,2,3];
+            await newArticle.setCategories(categories);
+        }
         return newArticle;
     } catch (error) {
         return error.message || "No se pudo crear el articulo";

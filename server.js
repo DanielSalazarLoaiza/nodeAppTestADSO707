@@ -18,7 +18,7 @@ app.use(bodyParser.json()); // Este se utiliza para recibir formato JSON
 // Configuración de rutas del API
 app.use('/api/v1/users', require('./api/v1/routes/users.routes')); // Ruta para users con la version 1 de la API
 app.use('/api/v1/articles', require('./api/v1/routes/articles.routes')); // Ruta para articles en la v1 de la API
-
+app.use('/api/v1/categories', require('./api/v1/routes/categories.routes')); // Ruta para categories en la v1 de la API
 
 // Ruta principal
 // app.get('/', (req, res) => {
