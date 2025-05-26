@@ -15,7 +15,7 @@ const getAllArticles = async () => {
                 exlude: ['createdAt', 'updatedAt']
             },
             // Con esta propiedad estamos incluyendo las categorias que estan relacionadas al articulo
-            include: ["categories"]
+            include: ["Categories"]
         });
         return Articles;
     } catch (error) {
