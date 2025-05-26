@@ -1,6 +1,15 @@
 // Enlazamos el servicio(el servicio es la capa) del usuario
 const userService = require('../services/userService');
 
+// Controller test User Api
+const testUserAPI = (req, res) => {
+    console.log('TestUserAPI');
+    resp.status(200).send({
+        "status": "Ok",
+        "message": "API User state: available"
+    });
+}
+
 // Controller para traer todos los usuarios 
 const getAllUsers = async (req, res) => {
     const allUsers = await userService.getAllUsers();
@@ -58,6 +67,7 @@ const deleteUser = async (req, res) => {
 
 // Llamado a todos los controllers
 module.exports =  {
+    testUserAPI,
     getAllUsers,
     getUserById,
     createUser,
