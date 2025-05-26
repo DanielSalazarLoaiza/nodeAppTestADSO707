@@ -7,11 +7,17 @@
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "slzr",
+    "password": "MkCtVDqCNHxgUEbERWBYdrId8DxvsqrA",
+    "database": "nodejs_app_test_ghy5",
+    "host": "dpg-d0qcc995pdvs73ag65q0-a",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
   },
   "production": {
     "username": "root",
