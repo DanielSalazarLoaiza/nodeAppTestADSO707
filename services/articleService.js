@@ -10,6 +10,12 @@ const getAllArticles = async () => {
                 as: "User",
                 attributes: ["id", "name", "email"]
             },
+            // Con esta propiedad excluimos campos no deseados en la salida 
+            attributes: {
+                exlude: ['createdAt', 'updatedAt']
+            },
+            // Con esta propiedad estamos incluyendo las categorias que estan relacionadas al articulo
+            include: ["categories"]
         });
         return Articles;
     } catch (error) {
@@ -36,6 +42,15 @@ const createArticle = async (title, content, UserId) => {
         if (newArticle) {
             const categories = [1,2,3];
             await newArticle.setCategories(categories);
+            // const response = await fetch('http://localhost:7000/api/v1/categories');
+            // const json = await response.json();
+            // await newArticle.setCategories(categories);
+
+            // Obtener solo los IDs desde la propiedad "data"
+            // const categoryNames = json.data.map(elemento => elemento.name);
+
+            // Asignar las categorias del articulo
+            // await newArticle.setCategories(categoryNames);
         }
         return newArticle;
     } catch (error) {
